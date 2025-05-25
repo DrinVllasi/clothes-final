@@ -11,7 +11,7 @@ include_once 'fonts.php';
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="mens-hoodie.php">Hoodies</a></li>
                         <li><a class="dropdown-item" href="mens-jeans.php">Jeans</a></li>
-                        <li><a class="dropdown-item" href="mens-shirts.php">Shirts</a></li>
+                        <li><a class="dropdown-item" href="mens-shirt.php">Shirts</a></li>
                         <li><a class="dropdown-item" href="mens-longsleeves.php">Longsleeves</a></li>
                         <li><a class="dropdown-item" href="mens-buttonups.php">Button Ups</a></li>
                         <li><a class="dropdown-item" href="mens-boots.php">Boots</a></li>

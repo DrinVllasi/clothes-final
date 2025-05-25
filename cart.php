@@ -147,7 +147,7 @@ $total = $subtotal + $shipping;
                                     <strong>Total:</strong>
                                     <strong id="cart-total">$<?php echo number_format($total, 2); ?></strong>
                                 </div>
-                                <button class="btn btn-dark w-100 mb-2 rounded-0 prata-font">Proceed to Checkout</button>
+                                <a href="checkout.php" class="btn btn-dark w-100 mb-2 rounded-0 prata-font">Proceed to Checkout</a>
                                 <form method="POST">
                                     <input type="hidden" name="clear_cart" value="1">
                                     <button type="submit" class="btn btn-outline-dark w-100 rounded-0 prata-font">Clear Cart</button>

@@ -25,15 +25,16 @@ include 'fonts.php';
     <div class="content-wrapper">
         <div class="story-content">
             <div class="story-text">
-                <p>As someone who loves clothes and is really into alternative fashion, I always find it super hard to find clothes I love where I live. A lot of the stuff here just isn’t my style, and I figured I couldn’t be the only one feeling that way.
+            <p>As someone who loves clothes and is really into alternative fashion, I always find it super hard to find clothes I love where I live. A lot of the stuff here just isn’t my style, and I figured I couldn’t be the only one feeling that way.</p>
 
-That’s what gave me the idea to start Devsun — a little clothing store I made for people like me who love alternative styles and want something different.
+<p>That’s what gave me the idea to start Devsun — a little clothing store I made for people like me who love alternative styles and want something different.</p>
 
-I really hope you like the stuff I’ve put together and that the website makes it easy (and fun) to look around.
+<p>To make your experience even better, this website includes an AI chatbot to help you out anytime, and a fun try-before-you-buy feature where you can mix and match outfits before ordering.</p>
 
-Thanks for checking it out.</p>
-                <p>I hope you like the products and the experience the website offers.</p>
-                <p class="emphasis">Enjoy shopping!</p>
+<p>I really hope you like the stuff I’ve put together and that the website makes it easy (and fun) to look around.</p>
+
+<p class="emphasis">Enjoy shopping!</p>
+
             </div>
         </div>
     </div>

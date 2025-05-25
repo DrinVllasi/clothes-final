@@ -48,12 +48,6 @@ $users_data= $selectUsers->fetchAll();
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
            <?php if ($_SESSION['is_admin'] == 'true') { ?>
-            <li class="nav-item">
-            <a class="nav-link" href="home.php">
-              <span ></span>
-              Home
-            </a>
-          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="dashboard.php">
               <span data-feather="home"></span>

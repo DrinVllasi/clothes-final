@@ -9,7 +9,7 @@ include 'header.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Hoodies - Devsun</title>
+    <title>Men's Shirts - Devsun</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="card-styles.css">
@@ -18,222 +18,186 @@ include 'header.php';
 </head>
 <body>
     <div class="category-title">
-        <h2>Men's Hoodies</h2>
+        <h2>Men's Shirts</h2>
     </div>
 
     <div class="container-fluid p-0">
         <div class="row g-0">
-            <!-- Men's Hoodie 1 -->
+            <!-- Men's Shirt 1 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie&price=49.99&image=clothes/mens/men-hoodie.png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt&price=39.99&image=clothes/mens/men-shirt.png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie.png" class="card-img-top rounded-0" alt="Men's Hoodie">
-                            <button class="favorite-btn" data-name="Men's Hoodie" data-price="49.99" data-image="clothes/mens/men-hoodie.png">
+                            <img src="clothes/mens/men-shirt.png" class="card-img-top rounded-0" alt="Men's Shirt">
+                            <button class="favorite-btn" data-name="Men's Shirt" data-price="39.99" data-image="clothes/mens/men-shirt.png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie</h5>
-                            <p class="card-text">$49.99</p>
+                            <h5 class="card-title">Men's Shirt</h5>
+                            <p class="card-text">$39.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 2 -->
+            <!-- Men's Shirt 2 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%202&price=54.99&image=clothes/mens/men-hoodie%20(2).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%202&price=44.99&image=clothes/mens/men-shirt%20(2).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (2).png" class="card-img-top rounded-0" alt="Men's Hoodie 2">
-                            <button class="favorite-btn" data-name="Men's Hoodie 2" data-price="54.99" data-image="clothes/mens/men-hoodie (2).png">
+                            <img src="clothes/mens/men-shirt (2).png" class="card-img-top rounded-0" alt="Men's Shirt 2">
+                            <button class="favorite-btn" data-name="Men's Shirt 2" data-price="44.99" data-image="clothes/mens/men-shirt (2).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 2</h5>
-                            <p class="card-text">$54.99</p>
+                            <h5 class="card-title">Men's Shirt 2</h5>
+                            <p class="card-text">$44.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 3 -->
+            <!-- Men's Shirt 3 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%203&price=59.99&image=clothes/mens/men-hoodie%20(3).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%203&price=39.99&image=clothes/mens/men-shirt%20(3).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (3).png" class="card-img-top rounded-0" alt="Men's Hoodie 3">
-                            <button class="favorite-btn" data-name="Men's Hoodie 3" data-price="59.99" data-image="clothes/mens/men-hoodie (3).png">
+                            <img src="clothes/mens/men-shirt (3).png" class="card-img-top rounded-0" alt="Men's Shirt 3">
+                            <button class="favorite-btn" data-name="Men's Shirt 3" data-price="39.99" data-image="clothes/mens/men-shirt (3).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 3</h5>
-                            <p class="card-text">$59.99</p>
+                            <h5 class="card-title">Men's Shirt 3</h5>
+                            <p class="card-text">$39.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 4 -->
+            <!-- Men's Shirt 4 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%204&price=49.99&image=clothes/mens/men-hoodie%20(4).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%204&price=44.99&image=clothes/mens/men-shirt%20(4).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (4).png" class="card-img-top rounded-0" alt="Men's Hoodie 4">
-                            <button class="favorite-btn" data-name="Men's Hoodie 4" data-price="49.99" data-image="clothes/mens/men-hoodie (4).png">
+                            <img src="clothes/mens/men-shirt (4).png" class="card-img-top rounded-0" alt="Men's Shirt 4">
+                            <button class="favorite-btn" data-name="Men's Shirt 4" data-price="44.99" data-image="clothes/mens/men-shirt (4).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 4</h5>
-                            <p class="card-text">$49.99</p>
+                            <h5 class="card-title">Men's Shirt 4</h5>
+                            <p class="card-text">$44.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 5 -->
+            <!-- Men's Shirt 5 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%205&price=54.99&image=clothes/mens/men-hoodie%20(5).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%205&price=39.99&image=clothes/mens/men-shirt%20(5).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (5).png" class="card-img-top rounded-0" alt="Men's Hoodie 5">
-                            <button class="favorite-btn" data-name="Men's Hoodie 5" data-price="54.99" data-image="clothes/mens/men-hoodie (5).png">
+                            <img src="clothes/mens/men-shirt (5).png" class="card-img-top rounded-0" alt="Men's Shirt 5">
+                            <button class="favorite-btn" data-name="Men's Shirt 5" data-price="39.99" data-image="clothes/mens/men-shirt (5).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 5</h5>
-                            <p class="card-text">$54.99</p>
+                            <h5 class="card-title">Men's Shirt 5</h5>
+                            <p class="card-text">$39.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 6 -->
+            <!-- Men's Shirt 6 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%206&price=49.99&image=clothes/mens/men-hoodie%20(6).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%206&price=44.99&image=clothes/mens/men-shirt%20(6).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (6).png" class="card-img-top rounded-0" alt="Men's Hoodie 6">
-                            <button class="favorite-btn" data-name="Men's Hoodie 6" data-price="49.99" data-image="clothes/mens/men-hoodie (6).png">
+                            <img src="clothes/mens/men-shirt (6).png" class="card-img-top rounded-0" alt="Men's Shirt 6">
+                            <button class="favorite-btn" data-name="Men's Shirt 6" data-price="44.99" data-image="clothes/mens/men-shirt (6).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 6</h5>
-                            <p class="card-text">$49.99</p>
+                            <h5 class="card-title">Men's Shirt 6</h5>
+                            <p class="card-text">$44.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 7 -->
+            <!-- Men's Shirt 7 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%207&price=54.99&image=clothes/mens/men-hoodie%20(7).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%207&price=39.99&image=clothes/mens/men-shirt%20(7).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (7).png" class="card-img-top rounded-0" alt="Men's Hoodie 7">
-                            <button class="favorite-btn" data-name="Men's Hoodie 7" data-price="54.99" data-image="clothes/mens/men-hoodie (7).png">
+                            <img src="clothes/mens/men-shirt (7).png" class="card-img-top rounded-0" alt="Men's Shirt 7">
+                            <button class="favorite-btn" data-name="Men's Shirt 7" data-price="39.99" data-image="clothes/mens/men-shirt (7).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 7</h5>
-                            <p class="card-text">$54.99</p>
+                            <h5 class="card-title">Men's Shirt 7</h5>
+                            <p class="card-text">$39.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Men's Hoodie 8 -->
+            <!-- Men's Shirt 8 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Hoodie%208&price=59.99&image=clothes/mens/men-hoodie%20(8).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%208&price=44.99&image=clothes/mens/men-shirt%20(8).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-hoodie (8).png" class="card-img-top rounded-0" alt="Men's Hoodie 8">
-                            <button class="favorite-btn" data-name="Men's Hoodie 8" data-price="59.99" data-image="clothes/mens/men-hoodie (8).png">
+                            <img src="clothes/mens/men-shirt (8).png" class="card-img-top rounded-0" alt="Men's Shirt 8">
+                            <button class="favorite-btn" data-name="Men's Shirt 8" data-price="44.99" data-image="clothes/mens/men-shirt (8).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Hoodie 8</h5>
-                            <p class="card-text">$59.99</p>
+                            <h5 class="card-title">Men's Shirt 8</h5>
+                            <p class="card-text">$44.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Unisex Hoodie 1 -->
+            <!-- Men's Shirt 9 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Unisex%20Hoodie&price=54.99&image=clothes/mens/unisex-hoodie.png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%209&price=39.99&image=clothes/mens/men-shirt%20(9).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/unisex-hoodie.png" class="card-img-top rounded-0" alt="Unisex Hoodie">
-                            <button class="favorite-btn" data-name="Unisex Hoodie" data-price="54.99" data-image="clothes/mens/unisex-hoodie.png">
+                            <img src="clothes/mens/men-shirt (9).png" class="card-img-top rounded-0" alt="Men's Shirt 9">
+                            <button class="favorite-btn" data-name="Men's Shirt 9" data-price="39.99" data-image="clothes/mens/men-shirt (9).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Unisex Hoodie</h5>
-                            <p class="card-text">$54.99</p>
+                            <h5 class="card-title">Men's Shirt 9</h5>
+                            <p class="card-text">$39.99</p>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <!-- Unisex Hoodie 2 -->
+            <!-- Men's Shirt 10 -->
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Unisex%20Hoodie%202&price=59.99&image=clothes/mens/unisex-hoodie%20(2).png" class="product-link">
+                    <a href="product-details.php?name=Men's%20Shirt%2010&price=44.99&image=clothes/mens/men-shirt%20(10).png" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/unisex-hoodie (2).png" class="card-img-top rounded-0" alt="Unisex Hoodie 2">
-                            <button class="favorite-btn" data-name="Unisex Hoodie 2" data-price="59.99" data-image="clothes/mens/unisex-hoodie (2).png">
+                            <img src="clothes/mens/men-shirt (10).png" class="card-img-top rounded-0" alt="Men's Shirt 10">
+                            <button class="favorite-btn" data-name="Men's Shirt 10" data-price="44.99" data-image="clothes/mens/men-shirt (10).png">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Unisex Hoodie 2</h5>
-                            <p class="card-text">$59.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Unisex Hoodie 3 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Unisex%20Hoodie%203&price=49.99&image=clothes/mens/unisex-hoodie%20(3).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/unisex-hoodie (3).png" class="card-img-top rounded-0" alt="Unisex Hoodie 3">
-                            <button class="favorite-btn" data-name="Unisex Hoodie 3" data-price="49.99" data-image="clothes/mens/unisex-hoodie (3).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Unisex Hoodie 3</h5>
-                            <p class="card-text">$49.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Unisex Hoodie 4 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Unisex%20Hoodie%204&price=54.99&image=clothes/mens/unisex-hoodie%20(4).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/unisex-hoodie (4).png" class="card-img-top rounded-0" alt="Unisex Hoodie 4">
-                            <button class="favorite-btn" data-name="Unisex Hoodie 4" data-price="54.99" data-image="clothes/mens/unisex-hoodie (4).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Unisex Hoodie 4</h5>
-                            <p class="card-text">$54.99</p>
+                            <h5 class="card-title">Men's Shirt 10</h5>
+                            <p class="card-text">$44.99</p>
                         </div>
                     </a>
                 </div>
@@ -252,6 +216,18 @@ include 'header.php';
         .card-img-container {
             position: relative;
             overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
         }
 
         .favorite-btn {
@@ -366,4 +342,4 @@ include 'header.php';
         });
     </script>
 </body>
-</html>
+</html> 
