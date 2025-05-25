@@ -383,6 +383,7 @@ include 'fonts.php';
                         <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                         <div class="cart-item-details">
                             <h5 class="prata-font">${item.name}</h5>
+                            <p class="mb-1">Size: ${item.size}</p>
                             <p class="mb-2">$${item.price}</p>
                             <div class="quantity-control">
                                 <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
@@ -452,5 +453,8 @@ include 'fonts.php';
         window.onload = adjustBodyHeight;
         window.onresize = adjustBodyHeight;
     </script>
+
+    <?php include 'footer.php'; ?>
+    
 </body>
 </html>
