@@ -8,7 +8,8 @@ include 'fonts.php';
             <div class="row g-0">
                 <div class="col-md-3 footer-section">
                     <h3 class="prata-font">About Devsun</h3>
-                    <p>Discover the perfect blend of style and comfort with our curated collection of contemporary fashion.</p>
+                    <p>Find unique and stylish clothing for men and women. We offer a wide range of products for all ages and genders,
+                         and we're always updating our collections to bring you the style you need.</p>
                 </div>
                 
                 <div class="col-md-3 footer-section">
@@ -43,7 +44,8 @@ include 'fonts.php';
                 </div>
 
                 <div class="col-md-3 footer-section">
-                    <h3 class="prata-font"><a href="unisex.php" class="prata-font link">Unisex Collection</a></h3>
+                    <br><br><br><br><br><br><br><br>
+                    <h3 class="prata-font"><a href="unisex.php" class="prata-font link">Explore the Unisex Collection</a></h3>
                     <ul class="footer-links">
 
                     </ul>
@@ -54,7 +56,7 @@ include 'fonts.php';
         <div class="footer-bottom">
             <div class="row g-0">
                 <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2024 Devsun. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025 Devsun. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -62,6 +64,9 @@ include 'fonts.php';
 </footer>
 
 <style>
+.cool-font {
+    font-family: 'UnifrakturMaguntia', sans-serif;
+}
 .footer {
     background-color: #222;
     color: #fff;

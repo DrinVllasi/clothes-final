@@ -38,6 +38,9 @@ include_once 'fonts.php';
                 <li class="nav-item">
                     <a class="nav-link" href="unisex.php" style="color:black">Unisex</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="our-story.php" style="color:black">Our story</a>
+                </li>
             </ul>
         </nav>
     </div>

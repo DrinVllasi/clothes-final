@@ -173,7 +173,10 @@ include 'fonts.php';
         .cart-item-image {
             width: 100px;
             height: 100px;
-            object-fit: cover;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            padding: 5px;
         }
         
         .cart-item-details {
@@ -351,7 +354,7 @@ include 'fonts.php';
 
     <script>
         // Initialize cart as soon as possible
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         const cartList = document.getElementById('cart-items');
         const emptyCartMessage = document.getElementById('empty-cart-message');
         const cartContainer = document.querySelector('.cart-container');
@@ -359,42 +362,72 @@ include 'fonts.php';
         const totalElement = document.getElementById('total');
         
         function updateCart() {
-            console.log('Updating cart with items:', cartItems); // Debug log
             cartList.innerHTML = ''; // Clear existing items
             
             if (!cartItems || cartItems.length === 0) {
                 cartContainer.style.display = 'none';
-                emptyCartMessage.style.display = 'block';
+                emptyCartMessage.classList.remove('d-none');
                 return;
             }
             
             cartContainer.style.display = 'block';
-            emptyCartMessage.style.display = 'none';
+            emptyCartMessage.classList.add('d-none');
             
             let subtotal = 0;
             
             cartItems.forEach((item, index) => {
-                subtotal += parseFloat(item.price) * item.quantity;
+                const itemTotal = parseFloat(item.price) * item.quantity;
+                subtotal += itemTotal;
+                
+                // Debug the image path
+                console.log('Original image path:', item.image);
+                
+                // Ensure the image path is correct
+                let imagePath = item.image;
+                // If the path doesn't include /unisex/, /mens/, or /womens/, add the appropriate category
+                if (!imagePath.includes('/unisex/') && !imagePath.includes('/mens/') && !imagePath.includes('/womens/')) {
+                    // Determine category from the filename
+                    if (imagePath.includes('unisex-')) {
+                        imagePath = imagePath.replace('clothes/', 'clothes/unisex/');
+                    } else if (imagePath.includes('men-')) {
+                        imagePath = imagePath.replace('clothes/', 'clothes/mens/');
+                    } else if (imagePath.includes('women-')) {
+                        imagePath = imagePath.replace('clothes/', 'clothes/womens/');
+                    }
+                }
+                
+                console.log('Adjusted image path:', imagePath);
                 
                 const listItem = document.createElement('li');
                 listItem.className = 'list-group-item';
                 listItem.innerHTML = `
                     <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-image-container">
+                            <img src="${imagePath}" alt="${item.name}" class="cart-item-image" onerror="this.onerror=null; console.log('Failed to load image:', this.src);">
+                        </div>
                         <div class="cart-item-details">
                             <h5 class="prata-font">${item.name}</h5>
                             <p class="mb-1">Size: ${item.size}</p>
-                            <p class="mb-2">$${item.price}</p>
+                            <p class="mb-1">Price: $${parseFloat(item.price).toFixed(2)}</p>
+                            <p class="mb-2">Total: $${itemTotal.toFixed(2)}</p>
                             <div class="quantity-control">
                                 <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
                                 <span>${item.quantity}</span>
                                 <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
                             </div>
                         </div>
-                        <button class="btn btn-link text-danger" onclick="removeItem(${index})">Remove</button>
+                        <button class="btn btn-link text-danger" onclick="removeItem(${index})">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
                     </div>
                 `;
                 cartList.appendChild(listItem);
+                
+                // Debug: Check if the image exists
+                const img = new Image();
+                img.onload = () => console.log('Image loaded successfully:', imagePath);
+                img.onerror = () => console.log('Image failed to load:', imagePath);
+                img.src = imagePath;
             });
             
             const shipping = cartItems.length > 0 ? 5.99 : 0;
@@ -402,26 +435,29 @@ include 'fonts.php';
             
             subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
             totalElement.textContent = `$${total.toFixed(2)}`;
+            
+            // Debug: Log all cart items
+            console.log('Current cart items:', cartItems);
         }
         
-        window.updateQuantity = function(index, change) {
+        function updateQuantity(index, change) {
             if (cartItems[index].quantity + change > 0) {
                 cartItems[index].quantity += change;
                 localStorage.setItem('cartItems', JSON.stringify(cartItems));
                 updateCart();
             }
-        };
+        }
         
-        window.removeItem = function(index) {
+        function removeItem(index) {
             cartItems.splice(index, 1);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
             updateCart();
-        };
+        }
         
         const clearCartBtn = document.getElementById('clear-cart-btn');
         clearCartBtn.addEventListener('click', function() {
+            cartItems = [];
             localStorage.removeItem('cartItems');
-            cartItems.length = 0; // Clear the array
             updateCart();
         });
         
@@ -432,16 +468,13 @@ include 'fonts.php';
         
         // Call updateCart immediately when the page loads
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM Content Loaded'); // Debug log
             updateCart();
         });
 
-        // Also update cart when storage changes (in case of multiple tabs)
+        // Update cart when storage changes (in case of multiple tabs)
         window.addEventListener('storage', function(e) {
             if (e.key === 'cartItems') {
-                const newItems = JSON.parse(e.newValue || '[]');
-                cartItems.length = 0;
-                cartItems.push(...newItems);
+                cartItems = JSON.parse(e.newValue || '[]');
                 updateCart();
             }
         });

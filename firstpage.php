@@ -24,10 +24,10 @@ include 'fonts.php';
   <div class="row g-0">
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Unisex%20Jorts&price=34.99&image=clothes/unisex-jorts.jpg" class="product-link">
+        <a href="product-details.php?name=Unisex%20Jorts&price=34.99&image=clothes/unisex/unisex-jorts.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/unisex-jorts.jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Unisex Jorts" data-price="34.99" data-image="clothes/unisex-jorts.jpg">
+            <img src="clothes/unisex/unisex-jorts.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Unisex Jorts" data-price="34.99" data-image="clothes/unisex/unisex-jorts.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -41,10 +41,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Men's%20Hoodie&price=49.99&image=clothes/men-hoodie%20(6).jpg" class="product-link">
+        <a href="product-details.php?name=Men's%20Hoodie&price=49.99&image=clothes/mens/men-hoodie.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/men-hoodie (6).jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Men's Hoodie" data-price="49.99" data-image="clothes/men-hoodie (6).jpg">
+            <img src="clothes/mens/men-hoodie.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Men's Hoodie" data-price="49.99" data-image="clothes/mens/men-hoodie.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -58,10 +58,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Men's%20Longsleeve&price=29.99&image=clothes/men-longsleeve.jpg" class="product-link">
+        <a href="product-details.php?name=Men's%20Longsleeve&price=29.99&image=clothes/mens/men-longsleeve.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/men-longsleeve.jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Men's Longsleeve" data-price="29.99" data-image="clothes/men-longsleeve.jpg">
+            <img src="clothes/mens/men-longsleeve.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Men's Longsleeve" data-price="29.99" data-image="clothes/mens/men-longsleeve.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -75,10 +75,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Women's%20Bootcut&price=39.99&image=clothes/women-bootcut.JPG" class="product-link">
+        <a href="product-details.php?name=Women's%20Bootcut&price=39.99&image=clothes/womens/women-bootcut.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/women-bootcut.JPG" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Women's Bootcut" data-price="39.99" data-image="clothes/women-bootcut.JPG">
+            <img src="clothes/womens/women-bootcut.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Women's Bootcut" data-price="39.99" data-image="clothes/womens/women-bootcut.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -92,10 +92,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Women's%20Shirt&price=29.99&image=clothes/women-shirt%20(7).JPG" class="product-link">
+        <a href="product-details.php?name=Women's%20Shirt&price=29.99&image=clothes/womens/women-shirt.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/women-shirt (7).JPG" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Women's Shirt" data-price="29.99" data-image="clothes/women-shirt (7).JPG">
+            <img src="clothes/womens/women-shirt.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Women's Shirt" data-price="29.99" data-image="clothes/womens/women-shirt.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -109,10 +109,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Women's%20Skirt&price=29.99&image=clothes/women-skirt.jpg" class="product-link">
+        <a href="product-details.php?name=Women's%20Skirt&price=29.99&image=clothes/womens/women-skirt.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/women-skirt.jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Women's Skirt" data-price="29.99" data-image="clothes/women-skirt.jpg">
+            <img src="clothes/womens/women-skirt.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Women's Skirt" data-price="29.99" data-image="clothes/womens/women-skirt.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -126,10 +126,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Men's%20Shirt&price=29.99&image=clothes/men-shirt%20(5).JPG" class="product-link">
+        <a href="product-details.php?name=Men's%20Shirt&price=29.99&image=clothes/mens/men-shirt.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/men-shirt (5).JPG" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Men's Shirt" data-price="29.99" data-image="clothes/men-shirt (5).JPG">
+            <img src="clothes/mens/men-shirt.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Men's Shirt" data-price="29.99" data-image="clothes/mens/men-shirt.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -143,10 +143,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Unisex%20Baggy&price=29.99&image=clothes/unisex-baggy%20(2).jpg" class="product-link">
+        <a href="product-details.php?name=Unisex%20Baggy&price=29.99&image=clothes/unisex/unisex-baggy.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/unisex-baggy (2).jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Unisex Baggy" data-price="29.99" data-image="clothes/unisex-baggy (2).jpg">
+            <img src="clothes/unisex/unisex-baggy.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Unisex Baggy" data-price="29.99" data-image="clothes/unisex/unisex-baggy.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -160,10 +160,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Unisex%20Dirtywashed%20Baggy&price=29.99&image=clothes/unisex-dirtywashed-baggyjeans-1.jpg" class="product-link">
+        <a href="product-details.php?name=Unisex%20Dirtywashed%20Baggy&price=29.99&image=clothes/unisex/unisex-dirtywashed-baggyjeans-1.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/unisex-dirtywashed-baggyjeans-1.jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Unisex Dirtywashed Baggy" data-price="29.99" data-image="clothes/unisex-dirtywashed-baggyjeans-1.jpg">
+            <img src="clothes/unisex/unisex-dirtywashed-baggyjeans-1.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Unisex Dirtywashed Baggy" data-price="29.99" data-image="clothes/unisex/unisex-dirtywashed-baggyjeans-1.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -177,10 +177,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Women's%20Flares&price=29.99&image=clothes/women-flares.jpg" class="product-link">
+        <a href="product-details.php?name=Women's%20Flares&price=29.99&image=clothes/womens/women-flares.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/women-flares.jpg" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Women's Flares" data-price="29.99" data-image="clothes/women-flares.jpg">
+            <img src="clothes/womens/women-flares.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Women's Flares" data-price="29.99" data-image="clothes/womens/women-flares.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -194,10 +194,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Unisex%20Shirt&price=29.99&image=clothes/unisex-shirt.JPG" class="product-link">
+        <a href="product-details.php?name=Unisex%20Shirt&price=29.99&image=clothes/unisex/unisex-shirt.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/unisex-shirt.JPG" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Unisex Shirt" data-price="29.99" data-image="clothes/unisex-shirt.JPG">
+            <img src="clothes/unisex/unisex-shirt.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Unisex Shirt" data-price="29.99" data-image="clothes/unisex/unisex-shirt.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -211,10 +211,10 @@ include 'fonts.php';
 
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card rounded-0">
-        <a href="product-details.php?name=Men's%20Baggy&price=29.99&image=clothes/men-baggy%20(2).png" class="product-link">
+        <a href="product-details.php?name=Men's%20Baggy&price=29.99&image=clothes/mens/men-baggy.jpg" class="product-link">
           <div class="card-img-container">
-            <img src="clothes/men-baggy (2).png" class="card-img-top rounded-0" alt="...">
-            <button class="favorite-btn" data-name="Men's Baggy" data-price="29.99" data-image="clothes/men-baggy (2).png">
+            <img src="clothes/mens/men-baggy.jpg" class="card-img-top rounded-0" alt="...">
+            <button class="favorite-btn" data-name="Men's Baggy" data-price="29.99" data-image="clothes/mens/men-baggy.jpg">
               <i class="fas fa-heart"></i>
             </button>
           </div>
@@ -299,6 +299,12 @@ include 'fonts.php';
       </div>
     </div>
   </div>
+</div>
+
+<div class="divider">
+  <div class="divider-element"></div>
+  <div class="divider-text">devsun</div>
+  <div class="divider-element"></div>
 </div>
 
 <?php include 'footer.php'; ?>

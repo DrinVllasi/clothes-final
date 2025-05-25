@@ -1,258 +1,237 @@
-   <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <?php
-include 'header.php';
 include 'fonts.php';
+include 'config.php';
+include 'header.php';
+
+// Get product details from URL parameters
+$productName = $_GET['name'] ?? '';
+$productPrice = $_GET['price'] ?? '';
+$productImage = $_GET['image'] ?? '';
+
+// Get the category from the image path
+$category = '';
+if (strpos($productImage, 'men-') !== false) {
+    $category = 'men';
+} else if (strpos($productImage, 'women-') !== false) {
+    $category = 'women';
+} else if (strpos($productImage, 'unisex-') !== false) {
+    $category = 'unisex';
+}
+
+// Define all available products by category
+$allProducts = [
+    'men' => [
+        ['name' => "Men's Slim Jeans", 'price' => '39.99', 'image' => 'clothes/mens/men-slim.jpg'],
+        ['name' => "Men's Straight Jeans", 'price' => '39.99', 'image' => 'clothes/mens/men-straight.jpg'],
+        ['name' => "Men's Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/mens/men-baggy.jpg'],
+        ['name' => "Men's Goth Baggy Jeans", 'price' => '49.99', 'image' => 'clothes/mens/men-goth-baggyjeans-1.jpg'],
+        ['name' => "Men's Cargo Baggy Jeans", 'price' => '54.99', 'image' => 'clothes/mens/mens-cargo-baggyjeans-1.jpg'],
+        ['name' => "Men's Button Up", 'price' => '34.99', 'image' => 'clothes/mens/men-buttonup.jpg'],
+        ['name' => "Men's Hoodie", 'price' => '49.99', 'image' => 'clothes/mens/men-hoodie.jpg'],
+        ['name' => "Men's Longsleeve", 'price' => '29.99', 'image' => 'clothes/mens/men-longsleeve.jpg'],
+        ['name' => "Men's Shirt", 'price' => '24.99', 'image' => 'clothes/mens/men-shirt.jpg']
+    ],
+    'women' => [
+        ['name' => "Women's Bootcut Jeans", 'price' => '39.99', 'image' => 'clothes/womens/women-bootcut.jpg'],
+        ['name' => "Women's Flare Jeans", 'price' => '44.99', 'image' => 'clothes/womens/women-flare.jpg'],
+        ['name' => "Women's Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/womens/women-baggy.jpg'],
+        ['name' => "Women's Shorts", 'price' => '34.99', 'image' => 'clothes/womens/women-shorts.jpg'],
+        ['name' => "Women's Skirt", 'price' => '39.99', 'image' => 'clothes/womens/women-skirt.jpg'],
+        ['name' => "Women's Hoodie", 'price' => '49.99', 'image' => 'clothes/womens/women-hoodie.jpg'],
+        ['name' => "Women's Shirt", 'price' => '24.99', 'image' => 'clothes/womens/women-shirt.jpg'],
+        ['name' => "Women's Longsleeve", 'price' => '29.99', 'image' => 'clothes/womens/women-longsleeve.jpg']
+    ],
+    'unisex' => [
+        ['name' => "Unisex Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/unisex/unisex-baggy.jpg'],
+        ['name' => "Unisex Dirtywashed Baggy Jeans", 'price' => '49.99', 'image' => 'clothes/unisex/unisex-dirtywashed-baggyjeans-1.jpg'],
+        ['name' => "Unisex Jorts", 'price' => '34.99', 'image' => 'clothes/unisex/unisex-jorts.jpg'],
+        ['name' => "Unisex Hoodie", 'price' => '49.99', 'image' => 'clothes/unisex/unisex-hoodie.jpg'],
+        ['name' => "Unisex Shirt", 'price' => '24.99', 'image' => 'clothes/unisex/unisex-shirt.jpg'],
+        ['name' => "Unisex Longsleeve", 'price' => '29.99', 'image' => 'clothes/unisex/unisex-longsleeve.jpg']
+    ]
+];
+
+// Get suggestions for the current category
+$suggestions = [];
+if ($category && isset($allProducts[$category])) {
+    $categoryProducts = $allProducts[$category];
+    // Filter out the current product
+    $categoryProducts = array_filter($categoryProducts, function($product) use ($productName) {
+        return $product['name'] !== $productName;
+    });
+    // Randomly select 3 products
+    $keys = array_rand($categoryProducts, min(3, count($categoryProducts)));
+    if (!is_array($keys)) {
+        $keys = [$keys];
+    }
+    foreach ($keys as $key) {
+        $suggestions[] = $categoryProducts[$key];
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Product Details - Devsun</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><?php echo htmlspecialchars($productName); ?> - Devsun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
-    <div class="container-fluid p-0">
-        <div class="row g-0">
-            <!-- Product Image (Left Half) -->
-            <div class="col-md-6 p-0">
-                <div class="product-image">
-                    <img id="productImage" src="" alt="Product Image" class="img-fluid product-img">
-                    <button class="favorite-btn" id="favoriteBtn">
-                        <i class="fas fa-heart"></i>
-                    </button>
-                </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="<?php echo htmlspecialchars($productImage); ?>" class="img-fluid product-image" alt="<?php echo htmlspecialchars($productName); ?>" />
             </div>
-            
-            <!-- Product Details (Right Half) -->
-            <div class="col-md-6 borderless product-details">
-                <div class="details-container">
-                    <h1 id="productName" class="prata-font"></h1>
-                    <p id="productPrice" class="price prata-font"></p>
-                    
-                    <!-- Size Selection -->
-                    <div class="size-selection mb-4">
-                        <h3 class="prata-font mb-3">Select Size</h3>
-                        <div class="btn-group size-buttons" role="group">
-                            <button type="button" class="btn btn-outline-dark size-btn">XS</button>
-                            <button type="button" class="btn btn-outline-dark size-btn">S</button>
-                            <button type="button" class="btn btn-outline-dark size-btn">M</button>
-                            <button type="button" class="btn btn-outline-dark size-btn">L</button>
-                            <button type="button" class="btn btn-outline-dark size-btn">XL</button>
-                        </div>
+            <div class="col-md-6">
+                <h1 class="product-title"><?php echo htmlspecialchars($productName); ?></h1>
+                <p class="product-price">$<?php echo htmlspecialchars($productPrice); ?></p>
+                <div class="size-selector mb-4">
+                    <h4>Select Size:</h4>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="size" id="size-xs" autocomplete="off" />
+                        <label class="btn btn-outline-dark rounded-0" for="size-xs">XS</label>
+
+                        <input type="radio" class="btn-check" name="size" id="size-s" autocomplete="off" />
+                        <label class="btn btn-outline-dark rounded-0" for="size-s">S</label>
+
+                        <input type="radio" class="btn-check" name="size" id="size-m" autocomplete="off" />
+                        <label class="btn btn-outline-dark rounded-0" for="size-m">M</label>
+
+                        <input type="radio" class="btn-check" name="size" id="size-l" autocomplete="off" />
+                        <label class="btn btn-outline-dark rounded-0" for="size-l">L</label>
+
+                        <input type="radio" class="btn-check" name="size" id="size-xl" autocomplete="off" />
+                        <label class="btn btn-outline-dark rounded-0" for="size-xl">XL</label>
                     </div>
-                    
-                    <!-- Add to Cart Button -->
-                    <button class="btn btn-dark btn-lg w-100 add-to-cart prata-font" disabled>
-                        Add to Cart
-                    </button>
                 </div>
+                <button class="btn btn-dark rounded-0 w-100 mb-3 add-to-cart"
+                        data-name="<?php echo htmlspecialchars($productName); ?>"
+                        data-price="<?php echo htmlspecialchars($productPrice); ?>"
+                        data-image="<?php echo htmlspecialchars($productImage); ?>">
+                    Add to Cart
+                </button>
+                <button class="btn btn-outline-dark rounded-0 w-100 favorite-btn"
+                        data-name="<?php echo htmlspecialchars($productName); ?>"
+                        data-price="<?php echo htmlspecialchars($productPrice); ?>"
+                        data-image="<?php echo htmlspecialchars($productImage); ?>">
+                    <i class="fas fa-heart"></i> Add to Wishlist
+                </button>
             </div>
         </div>
+
+        <!-- Chatbot container with example buttons -->
+        <div id="chatbot" style="margin-top: 40px;">
+            <h3>Ask for clothing suggestions:</h3>
+            <input type="text" id="userMessage" placeholder="Type your message here" style="width: 70%; padding: 8px;" />
+            <button id="sendBtn" style="padding: 8px 16px;">Send</button>
+
+            <!-- Example buttons for quick queries -->
+            <div id="exampleButtons" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-sm btn-outline-primary example-btn">Show me men's hoodies</button>
+                <button class="btn btn-sm btn-outline-primary example-btn">Suggest unisex baggy pants</button>
+            </div>
+
+            <div id="chatbotResponse" style="margin-top: 20px;"></div>
+        </div>
+
     </div>
 
-<?php include 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
+
+    <script>
+        // Handle example buttons to autofill input and send message
+        document.querySelectorAll('.example-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const userMessageInput = document.getElementById('userMessage');
+                userMessageInput.value = button.textContent;
+                userMessageInput.focus();
+
+                // Trigger the send button click programmatically
+                document.getElementById('sendBtn').click();
+            });
+        });
+
+        // Chatbot send button logic (your existing code)
+        document.getElementById('sendBtn').addEventListener('click', function () {
+            const messageInput = document.getElementById('userMessage');
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            const responseDiv = document.getElementById('chatbotResponse');
+            responseDiv.innerHTML = 'Loading...';
+
+            fetch('chatbot_api.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message }),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    let html = `<p><strong>Bot:</strong> ${data.response}</p>`;
+
+                    if (data.images && data.images.length > 0) {
+                        html += '<div style="display:flex; gap:10px; flex-wrap: wrap;">';
+                        data.images.forEach(imgUrl => {
+                            html += `<img src="${imgUrl}" alt="Suggestion" style="height:120px; border:1px solid #ccc; border-radius:5px;">`;
+                        });
+                        html += '</div>';
+                    }
+
+                    responseDiv.innerHTML = html;
+                })
+                .catch(() => {
+                    responseDiv.innerHTML = '<p style="color:red;">Error communicating with chatbot.</p>';
+                });
+
+            messageInput.value = '';
+            messageInput.focus();
+        });
+    </script>
+
+    <style>
+        .product-image {
+            max-height: 600px;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-family: 'Prata', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-family: 'Prata', serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .size-selector h4 {
+            font-family: 'Prata', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-group {
+            gap: 5px;
+        }
+
+        .add-to-cart, .favorite-btn {
+            font-family: 'Prata', serif;
+            font-weight: 600;
+        }
+
+        #chatbot {
+            font-family: 'Prata', serif;
+        }
+    </style>
 
 </body>
 </html>
-
-<style>
-.col-md-6 {
-    border: 1px solid black;
-}
-.borderless{
-    border: none;
-}
-.product-image {
-    position: relative;
-    height: 100vh;
-}
-
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: fit;
-}
-
-.product-details {
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-}
-
-.details-container {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.favorite-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.favorite-btn:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: scale(1.1);
-}
-
-.favorite-btn i {
-    font-size: 20px;
-    color: #666;
-    transition: all 0.3s ease;
-}
-
-.favorite-btn.active i {
-    color: #ff0000;
-}
-
-.price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1rem 0;
-}
-
-.size-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.size-btn {
-    padding: 10px 20px;
-    font-family: 'Prata', serif;
-}
-
-.size-btn.active {
-    background-color: black;
-    color: white;
-}
-
-.add-to-cart {
-    margin-top: 2rem;
-    padding: 15px;
-    font-size: 1.2rem;
-}
-
-.add-to-cart:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-.prata-font {
-    font-family: 'Prata', serif;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get product details from URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const productName = urlParams.get('name');
-    const productPrice = urlParams.get('price');
-    const productImage = urlParams.get('image');
-    
-    // Set product details
-    document.getElementById('productName').textContent = productName;
-    document.getElementById('productPrice').textContent = `$${productPrice}`;
-    document.getElementById('productImage').src = productImage;
-    
-    // Size selection
-    const sizeButtons = document.querySelectorAll('.size-btn');
-    const addToCartButton = document.querySelector('.add-to-cart');
-    
-    sizeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            sizeButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            // Enable add to cart button
-            addToCartButton.disabled = false;
-        });
-    });
-    
-    // Add to cart functionality
-    addToCartButton.addEventListener('click', function() {
-        const selectedSize = document.querySelector('.size-btn.active').textContent;
-        
-        // Get existing cart items or initialize empty array
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        
-        // Create unique identifier for product+size combination
-        const itemId = `${productName}-${selectedSize}`;
-        
-        // Check if item with same size already exists in cart
-        const existingItem = cartItems.find(item => 
-            item.name === productName && item.size === selectedSize
-        );
-        
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cartItems.push({
-                name: productName,
-                price: parseFloat(productPrice),
-                image: productImage,
-                size: selectedSize,
-                quantity: 1
-            });
-        }
-        
-        // Save updated cart back to localStorage
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        
-        // Show success message
-        addToCartButton.textContent = 'Added to Cart!';
-        addToCartButton.disabled = true;
-        
-        setTimeout(() => {
-            addToCartButton.textContent = 'Add to Cart';
-            addToCartButton.disabled = false;
-        }, 1500);
-    });
-    
-    // Favorites functionality
-    const favoriteBtn = document.getElementById('favoriteBtn');
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    
-    // Check if product is already in favorites
-    const isFavorite = favorites.some(item => item.name === productName);
-    if (isFavorite) {
-        favoriteBtn.classList.add('active');
-    }
-    
-    favoriteBtn.addEventListener('click', function() {
-        const index = favorites.findIndex(item => item.name === productName);
-        
-        if (index === -1) {
-            // Add to favorites
-            favorites.push({
-                name: productName,
-                price: parseFloat(productPrice),
-                image: productImage
-            });
-            this.classList.add('active');
-        } else {
-            // Remove from favorites
-            favorites.splice(index, 1);
-            this.classList.remove('active');
-        }
-        
-        // Save to localStorage
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-    });
-});
-</script>
-</html> 

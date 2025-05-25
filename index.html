@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Chatbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #chatContainer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    #chatMessages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .message {
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    .user { background: #d1e7dd; text-align: right; }
+    .ai { background: #f8d7da; text-align: left; }
+    #inputArea {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #userMessage {
+      flex: 1;
+      border: none;
+      padding: 10px;
+    }
+    #sendMessage {
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="chatContainer">
+  <div id="chatMessages"></div>
+  <div id="inputArea">
+    <input type="text" id="userMessage" placeholder="Type your message..." />
+    <button id="sendMessage">Send</button>
+  </div>
+</div>
+
+<script>
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const chatMessages = document.getElementById('chatMessages');
+    const sendBtn = document.getElementById('sendMessage');
+    const inputBox = document.getElementById('userMessage');
+
+    // Function to add messages to the chat window
+    function addMessage(text, sender) {
+      const messageEl = document.createElement('div');
+      messageEl.classList.add('message', sender);
+      messageEl.textContent = text;
+      chatMessages.appendChild(messageEl);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Send message when button is clicked
+    sendBtn.addEventListener('click', () => {
+      const msg = inputBox.value.trim();
+      if (!msg) return;
+
+      console.log('Sending message:', msg); // DEBUG
+
+      addMessage(msg, 'user');
+      inputBox.value = '';
+
+      fetch('chatbot_api.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      })
+      .then(res => {
+        console.log('Response status:', res.status); // DEBUG
+        return res.json();
+      })
+      .then(data => {
+        console.log('AI replied:', data); // DEBUG
+        addMessage(data.response, 'ai');
+      })
+      .catch(err => {
+        console.error('Fetch error:', err); // DEBUG
+        addMessage("Error talking to AI.", 'ai');
+      });
+    });
+
+    // Allow pressing "Enter" to send
+    inputBox.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') sendBtn.click();
+    });
+  });
+</script>
+
+</body>
+</html>
