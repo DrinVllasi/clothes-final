@@ -21,33 +21,33 @@ if (strpos($productImage, 'men-') !== false) {
 // Define all available products by category
 $allProducts = [
     'men' => [
-        ['name' => "Men's Slim Jeans", 'price' => '39.99', 'image' => 'clothes/mens/men-slim.jpg'],
-        ['name' => "Men's Straight Jeans", 'price' => '39.99', 'image' => 'clothes/mens/men-straight.jpg'],
-        ['name' => "Men's Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/mens/men-baggy.jpg'],
-        ['name' => "Men's Goth Baggy Jeans", 'price' => '49.99', 'image' => 'clothes/mens/men-goth-baggyjeans-1.jpg'],
-        ['name' => "Men's Cargo Baggy Jeans", 'price' => '54.99', 'image' => 'clothes/mens/mens-cargo-baggyjeans-1.jpg'],
-        ['name' => "Men's Button Up", 'price' => '34.99', 'image' => 'clothes/mens/men-buttonup.jpg'],
-        ['name' => "Men's Hoodie", 'price' => '49.99', 'image' => 'clothes/mens/men-hoodie.jpg'],
-        ['name' => "Men's Longsleeve", 'price' => '29.99', 'image' => 'clothes/mens/men-longsleeve.jpg'],
-        ['name' => "Men's Shirt", 'price' => '24.99', 'image' => 'clothes/mens/men-shirt.jpg']
+        ['name' => "Men's Slim Jeans", 'price' => '39.99', 'image' => 'clothes/mens/men-slim.png'],
+        ['name' => "Men's Straight Jeans", 'price' => '39.99', 'image' => 'clothes/mens/men-straight.png'],
+        ['name' => "Men's Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/mens/men-baggy.png'],
+        ['name' => "Men's Goth Baggy Jeans", 'price' => '49.99', 'image' => 'clothes/mens/men-goth-baggyjeans-1.png'],
+        ['name' => "Men's Cargo Baggy Jeans", 'price' => '54.99', 'image' => 'clothes/mens/mens-cargo-baggyjeans-1.png'],
+        ['name' => "Men's Button Up", 'price' => '34.99', 'image' => 'clothes/mens/men-buttonup.png'],
+        ['name' => "Men's Hoodie", 'price' => '49.99', 'image' => 'clothes/mens/men-hoodie.png'],
+        ['name' => "Men's Longsleeve", 'price' => '29.99', 'image' => 'clothes/mens/men-longsleeve.png'],
+        ['name' => "Men's Shirt", 'price' => '24.99', 'image' => 'clothes/mens/men-shirt.png']
     ],
     'women' => [
-        ['name' => "Women's Bootcut Jeans", 'price' => '39.99', 'image' => 'clothes/womens/women-bootcut.jpg'],
-        ['name' => "Women's Flare Jeans", 'price' => '44.99', 'image' => 'clothes/womens/women-flare.jpg'],
-        ['name' => "Women's Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/womens/women-baggy.jpg'],
-        ['name' => "Women's Shorts", 'price' => '34.99', 'image' => 'clothes/womens/women-shorts.jpg'],
-        ['name' => "Women's Skirt", 'price' => '39.99', 'image' => 'clothes/womens/women-skirt.jpg'],
-        ['name' => "Women's Hoodie", 'price' => '49.99', 'image' => 'clothes/womens/women-hoodie.jpg'],
-        ['name' => "Women's Shirt", 'price' => '24.99', 'image' => 'clothes/womens/women-shirt.jpg'],
-        ['name' => "Women's Longsleeve", 'price' => '29.99', 'image' => 'clothes/womens/women-longsleeve.jpg']
+        ['name' => "Women's Bootcut Jeans", 'price' => '39.99', 'image' => 'clothes/womens/women-bootcut.png'],
+        ['name' => "Women's Flare Jeans", 'price' => '44.99', 'image' => 'clothes/womens/women-flare.png'],
+        ['name' => "Women's Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/womens/women-baggy.png'],
+        ['name' => "Women's Shorts", 'price' => '34.99', 'image' => 'clothes/womens/women-shorts.png'],
+        ['name' => "Women's Skirt", 'price' => '39.99', 'image' => 'clothes/womens/women-skirt.png'],
+        ['name' => "Women's Hoodie", 'price' => '49.99', 'image' => 'clothes/womens/women-hoodie.png'],
+        ['name' => "Women's Shirt", 'price' => '24.99', 'image' => 'clothes/womens/women-shirt.png'],
+        ['name' => "Women's Longsleeve", 'price' => '29.99', 'image' => 'clothes/womens/women-longsleeve.png']
     ],
     'unisex' => [
-        ['name' => "Unisex Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/unisex/unisex-baggy.jpg'],
-        ['name' => "Unisex Dirtywashed Baggy Jeans", 'price' => '49.99', 'image' => 'clothes/unisex/unisex-dirtywashed-baggyjeans-1.jpg'],
-        ['name' => "Unisex Jorts", 'price' => '34.99', 'image' => 'clothes/unisex/unisex-jorts.jpg'],
-        ['name' => "Unisex Hoodie", 'price' => '49.99', 'image' => 'clothes/unisex/unisex-hoodie.jpg'],
-        ['name' => "Unisex Shirt", 'price' => '24.99', 'image' => 'clothes/unisex/unisex-shirt.jpg'],
-        ['name' => "Unisex Longsleeve", 'price' => '29.99', 'image' => 'clothes/unisex/unisex-longsleeve.jpg']
+        ['name' => "Unisex Baggy Jeans", 'price' => '44.99', 'image' => 'clothes/mens/unisex-baggy.png'],
+        ['name' => "Unisex Dirtywashed Baggy Jeans", 'price' => '49.99', 'image' => 'clothes/mens/unisex-dirtywashed-baggyjeans-1.png'],
+        ['name' => "Unisex Jorts", 'price' => '34.99', 'image' => 'clothes/mens/unisex-jorts.png'],
+        ['name' => "Unisex Hoodie", 'price' => '49.99', 'image' => 'clothes/mens/unisex-hoodie.png'],
+        ['name' => "Unisex Shirt", 'price' => '24.99', 'image' => 'clothes/mens/unisex-shirt.png'],
+        ['name' => "Unisex Longsleeve", 'price' => '29.99', 'image' => 'clothes/mens/unisex-longsleeve.png']
     ]
 ];
 
@@ -108,24 +108,20 @@ if ($category && isset($allProducts[$category])) {
                         <label class="btn btn-outline-dark rounded-0" for="size-xl">XL</label>
                     </div>
                 </div>
-                <button class="btn btn-dark rounded-0 w-100 mb-3 add-to-cart"
+                <button class="btn btn-dark rounded-0 w-100 mb-3 prata-font" id="addToCartBtn"
                         data-name="<?php echo htmlspecialchars($productName); ?>"
                         data-price="<?php echo htmlspecialchars($productPrice); ?>"
                         data-image="<?php echo htmlspecialchars($productImage); ?>">
                     Add to Cart
                 </button>
-                <button class="btn btn-outline-dark rounded-0 w-100 favorite-btn"
-                        data-name="<?php echo htmlspecialchars($productName); ?>"
-                        data-price="<?php echo htmlspecialchars($productPrice); ?>"
-                        data-image="<?php echo htmlspecialchars($productImage); ?>">
-                    <i class="fas fa-heart"></i> Add to Wishlist
-                </button>
+                
             </div>
         </div>
 
         <!-- Chatbot container with example buttons -->
         <div id="chatbot" style="margin-top: 40px;">
-            <h3>Ask for clothing suggestions:</h3>
+            <h3>Type the type of clothing you're looking for. <br> For example: men's jeans.
+        </h3>
             <input type="text" id="userMessage" placeholder="Type your message here" style="width: 70%; padding: 8px;" />
             <button id="sendBtn" style="padding: 8px 16px;">Send</button>
 
@@ -176,9 +172,16 @@ if ($category && isset($allProducts[$category])) {
                     let html = `<p><strong>Bot:</strong> ${data.response}</p>`;
 
                     if (data.images && data.images.length > 0) {
-                        html += '<div style="display:flex; gap:10px; flex-wrap: wrap;">';
+                        html += '<div class="row g-4 mt-3">';
                         data.images.forEach(imgUrl => {
-                            html += `<img src="${imgUrl}" alt="Suggestion" style="height:120px; border:1px solid #ccc; border-radius:5px;">`;
+                            html += `
+                                <div class="col-4">
+                                    <div class="favorite-card">
+                                        <div class="card-img-container">
+                                            <img src="${imgUrl}" alt="Suggestion" class="card-img-top">
+                                        </div>
+                                    </div>
+                                </div>`;
                         });
                         html += '</div>';
                     }
@@ -191,6 +194,43 @@ if ($category && isset($allProducts[$category])) {
 
             messageInput.value = '';
             messageInput.focus();
+        });
+
+        // Add to Cart button logic
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            const btn = this;
+            const size = document.querySelector('input[name="size"]:checked');
+            if (!size) {
+                alert('Please select a size');
+                return;
+            }
+
+            const data = {
+                name: btn.getAttribute('data-name'),
+                price: btn.getAttribute('data-price'),
+                image: btn.getAttribute('data-image'),
+                size: size.nextElementSibling.textContent
+            };
+
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    btn.textContent = 'Added to cart';
+                    setTimeout(() => {
+                        btn.textContent = 'Add to Cart';
+                    }, 1000);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
     </script>
 
@@ -230,6 +270,31 @@ if ($category && isset($allProducts[$category])) {
 
         #chatbot {
             font-family: 'Prata', serif;
+        }
+
+        /* Card styles for chatbot suggestions */
+        .favorite-card {
+            border: 1px solid black;
+            transition: all 0.3s ease;
+        }
+
+        .favorite-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-img-container {
+            position: relative;
+            padding-top: 100%;
+        }
+
+        .card-img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     </style>
 

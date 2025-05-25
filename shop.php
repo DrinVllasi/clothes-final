@@ -30,25 +30,25 @@ include 'fonts.php';
         <div class="square">
 
             <button class="furniture-btn" onclick="selectFurniture('Furniture 1')" data-furniture="Furniture 1" type="submit">Add To Cart</button>
-            <img src="furnitureimg/furniture3.jpg" alt="" class="img">
+            <img src="furnitureimg/furniture3.png" alt="" class="img">
             <h4 class="price" name="item_name">$250</h4>
             
         </div>
 
         <div class="square">
-            <img src="furnitureimg/furniture6.jpg" alt="" class="img">
+            <img src="furnitureimg/furniture6.png" alt="" class="img">
             <h4 class="price">$100</h4>
             <button class="furniture-btn"type="submit" onclick="selectFurniture('Furniture 2')"data-furniture="Furniture 2">Add To Cart</button>
         </div>
 
         <div class="square">
-            <img src="furnitureimg/furniture8.jpg" alt="" class="img">
+            <img src="furnitureimg/furniture8.png" alt="" class="img">
             <h4 class="price">$700</h4>
             <button class="furniture-btn"type="submit" onclick="selectFurniture('Furniture 3')"data-furniture="Furniture 3">Add To Cart</button>
         </div>
 
         <div class="square">
-            <img src="furnitureimg/furniture10.jpg" alt="" class="img">
+            <img src="furnitureimg/furniture10.png" alt="" class="img">
             <h4 class="price">$80</h4>
             <button class="furniture-btn"type="submit" onclick="selectFurniture('Furniture 4')"data-furniture="Furniture 4">Add To Cart</button>
         </div>

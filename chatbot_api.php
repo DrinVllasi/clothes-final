@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $categories = [
     'men' => 'clothes/mens',
     'women' => 'clothes/womens',
-    'unisex' => 'clothes/unisex',
+    'unisex' => 'clothes/mens',
 ];
 
 // Define item keywords you want to support (expand as needed)
@@ -13,6 +13,8 @@ $itemKeywords = ['hoodie', 'jeans', 'shirt', 'skirt', 'shorts', 'longsleeve', 'b
 // Read input message and lowercase
 $input = json_decode(file_get_contents('php://input'), true);
 $message = strtolower(trim($input['message'] ?? ''));
+
+// Conversational triggers
 
 // Detect category
 $category = null;
@@ -44,7 +46,7 @@ foreach ($itemKeywords as $keyword) {
 $folderPath = __DIR__ . '/' . $categories[$category];
 
 // Get all image files in the folder
-$imageFiles = glob($folderPath . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+$imageFiles = glob($folderPath . '/*.{png,PNG}', GLOB_BRACE);
 
 if (!$imageFiles) {
     echo json_encode([

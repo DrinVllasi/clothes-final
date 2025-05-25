@@ -6,13 +6,13 @@ include 'fonts.php';
     <div class="container-fluid p-0">
         <div class="footer-content">
             <div class="row g-0">
-                <div class="col-md-3 footer-section">
+                <div class="col-md-4 footer-section">
                     <h3 class="prata-font">About Devsun</h3>
                     <p>Find unique and stylish clothing for men and women. We offer a wide range of products for all ages and genders,
                          and we're always updating our collections to bring you the style you need.</p>
                 </div>
                 
-                <div class="col-md-3 footer-section">
+                <div class="col-md-4 footer-section">
                     <h3 class="prata-font">Men's Collection</h3>
                     <ul class="footer-links">
                         <li><a href="mens-hoodie.php">Men's Hoodies</a></li>
@@ -27,7 +27,7 @@ include 'fonts.php';
                     </ul>
                 </div>
 
-                <div class="col-md-3 footer-section">
+                <div class="col-md-4 footer-section">
                     <h3 class="prata-font">Women's Collection</h3>
                     <ul class="footer-links">
                         <li><a href="womens-accessories.php">Women's Accessories</a></li>
@@ -43,13 +43,6 @@ include 'fonts.php';
                     </ul>
                 </div>
 
-                <div class="col-md-3 footer-section">
-                    <br><br><br><br><br><br><br><br>
-                    <h3 class="prata-font"><a href="unisex.php" class="prata-font link">Explore the Unisex Collection</a></h3>
-                    <ul class="footer-links">
-
-                    </ul>
-                </div>
             </div>
         </div>
         

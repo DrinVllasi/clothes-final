@@ -36,7 +36,7 @@ include_once 'fonts.php';
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="unisex.php" style="color:black">Unisex</a>
+                    <a class="nav-link" href="try_outfits.php" style="color:black">Try outfits</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="our-story.php" style="color:black">Our story</a>
