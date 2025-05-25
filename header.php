@@ -12,7 +12,7 @@ include_once 'fonts.php';
                         <li><a class="dropdown-item" href="mens-hoodie.php">Hoodies</a></li>
                         <li><a class="dropdown-item" href="mens-jeans.php">Jeans</a></li>
                         <li><a class="dropdown-item" href="mens-shirt.php">Shirts</a></li>
-                        <li><a class="dropdown-item" href="mens-longsleeves.php">Longsleeves</a></li>
+                        <li><a class="dropdown-item" href="mens-longsleeve.php">Longsleeves</a></li>
                         <li><a class="dropdown-item" href="mens-buttonups.php">Button Ups</a></li>
                         <li><a class="dropdown-item" href="mens-boots.php">Boots</a></li>
                         <li><a class="dropdown-item" href="mens-shoes.php">Shoes</a></li>
@@ -26,7 +26,7 @@ include_once 'fonts.php';
                         <li><a class="dropdown-item" href="womens-hoodie.php">Hoodies</a></li>
                         <li><a class="dropdown-item" href="womens-jeans.php">Jeans</a></li>
                         <li><a class="dropdown-item" href="womens-shirts.php">Shirts</a></li>
-                        <li><a class="dropdown-item" href="womens-longsleeves.php">Longsleeves</a></li>
+                        <li><a class="dropdown-item" href="womens-longsleeve.php">Longsleeves</a></li>
                         <li><a class="dropdown-item" href="womens-shorts.php">Shorts</a></li>
                         <li><a class="dropdown-item" href="womens-skirts.php">Skirts</a></li>
                         <li><a class="dropdown-item" href="womens-boots.php">Boots</a></li>
