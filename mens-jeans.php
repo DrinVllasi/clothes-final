@@ -2,6 +2,42 @@
 include 'fonts.php';
 include 'config.php';
 include 'header.php';
+
+// Dynamically get all jeans images in clothes/mens
+$jeans_images = array_merge(
+    glob('clothes/mens/*baggy*.png'),
+    glob('clothes/mens/*slim*.png'),
+    glob('clothes/mens/*straight*.png'),
+    glob('clothes/mens/*bootcut*.png'),
+    glob('clothes/mens/*cargo*.png'),
+    glob('clothes/mens/*jorts*.png')
+);
+$jeans_images = array_unique($jeans_images);
+
+function makeProductName($filename) {
+    $name = basename($filename, '.png');
+    $name = str_replace(['-', '_'], ' ', $name);
+    $name = preg_replace('/\s+/', ' ', $name);
+    $name = ucwords($name);
+    return $name;
+}
+
+// Group images by type
+$baggy_images = array_filter($jeans_images, function($img) { 
+    return stripos($img, 'baggy') !== false || stripos($img, 'cargo') !== false; 
+});
+$slim_images = array_filter($jeans_images, function($img) { 
+    return stripos($img, 'slim') !== false; 
+});
+$straight_images = array_filter($jeans_images, function($img) { 
+    return stripos($img, 'straight') !== false; 
+});
+$bootcut_images = array_filter($jeans_images, function($img) { 
+    return stripos($img, 'bootcut') !== false; 
+});
+$jorts_images = array_filter($jeans_images, function($img) { 
+    return stripos($img, 'jorts') !== false; 
+});
 ?>
 
 <!DOCTYPE html>
@@ -22,233 +58,154 @@ include 'header.php';
     </div>
 
     <div class="container-fluid p-0">
+        <!-- Baggy Section -->
+        <div class="section-title">
+            <h3>Baggy</h3>
+        </div>
         <div class="row g-0">
-            <!-- Slim Jeans 1 -->
+            <?php foreach ($baggy_images as $img): 
+                $productName = makeProductName($img);
+                $price = '49.99';
+            ?>
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Slim%20Jeans&price=59.99&image=clothes/mens/men-slim.png" class="product-link">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-slim.png" class="card-img-top rounded-0" alt="Men's Slim Jeans">
-                            <button class="favorite-btn" data-name="Men's Slim Jeans" data-price="59.99" data-image="clothes/mens/men-slim.png">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Slim Jeans</h5>
-                            <p class="card-text">$59.99</p>
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
                         </div>
                     </a>
                 </div>
             </div>
+            <?php endforeach; ?>
+        </div>
 
-            <!-- Slim Jeans 2 -->
+        <!-- Slim Section -->
+        <div class="section-title">
+            <h3>Slim</h3>
+        </div>
+        <div class="row g-0">
+            <?php foreach ($slim_images as $img): 
+                $productName = makeProductName($img);
+                $price = '54.99';
+            ?>
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Slim%20Jeans%202&price=64.99&image=clothes/mens/men-slim%20(2).png" class="product-link">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-slim (2).png" class="card-img-top rounded-0" alt="Men's Slim Jeans 2">
-                            <button class="favorite-btn" data-name="Men's Slim Jeans 2" data-price="64.99" data-image="clothes/mens/men-slim (2).png">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Slim Jeans 2</h5>
-                            <p class="card-text">$64.99</p>
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
                         </div>
                     </a>
                 </div>
             </div>
+            <?php endforeach; ?>
+        </div>
 
-            <!-- Slim Jeans 3 -->
+        <!-- Straight Section -->
+        <div class="section-title">
+            <h3>Straight</h3>
+        </div>
+        <div class="row g-0">
+            <?php foreach ($straight_images as $img): 
+                $productName = makeProductName($img);
+                $price = '49.99';
+            ?>
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Slim%20Jeans%203&price=59.99&image=clothes/mens/men-slim%20(3).png" class="product-link">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-slim (3).png" class="card-img-top rounded-0" alt="Men's Slim Jeans 3">
-                            <button class="favorite-btn" data-name="Men's Slim Jeans 3" data-price="59.99" data-image="clothes/mens/men-slim (3).png">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Slim Jeans 3</h5>
-                            <p class="card-text">$59.99</p>
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
                         </div>
                     </a>
                 </div>
             </div>
+            <?php endforeach; ?>
+        </div>
 
-            <!-- Slim Jeans 4 -->
+        <!-- Bootcut Section -->
+        <div class="section-title">
+            <h3>Bootcut</h3>
+        </div>
+        <div class="row g-0">
+            <?php foreach ($bootcut_images as $img): 
+                $productName = makeProductName($img);
+                $price = '54.99';
+            ?>
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Slim%20Jeans%204&price=64.99&image=clothes/mens/men-slim%20(4).png" class="product-link">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-slim (4).png" class="card-img-top rounded-0" alt="Men's Slim Jeans 4">
-                            <button class="favorite-btn" data-name="Men's Slim Jeans 4" data-price="64.99" data-image="clothes/mens/men-slim (4).png">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Slim Jeans 4</h5>
-                            <p class="card-text">$64.99</p>
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
                         </div>
                     </a>
                 </div>
             </div>
+            <?php endforeach; ?>
+        </div>
 
-            <!-- Slim Jeans 5 -->
+        <!-- Jorts Section -->
+        <div class="section-title">
+            <h3>Jorts</h3>
+        </div>
+        <div class="row g-0">
+            <?php foreach ($jorts_images as $img): 
+                $productName = makeProductName($img);
+                $price = '39.99';
+            ?>
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Slim%20Jeans%205&price=59.99&image=clothes/mens/men-slim%20(5).png" class="product-link">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
                         <div class="card-img-container">
-                            <img src="clothes/mens/men-slim (5).png" class="card-img-top rounded-0" alt="Men's Slim Jeans 5">
-                            <button class="favorite-btn" data-name="Men's Slim Jeans 5" data-price="59.99" data-image="clothes/mens/men-slim (5).png">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
                                 <i class="fas fa-heart"></i>
                             </button>
                         </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Men's Slim Jeans 5</h5>
-                            <p class="card-text">$59.99</p>
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
                         </div>
                     </a>
                 </div>
             </div>
-
-            <!-- Slim Jeans 6 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Slim%20Jeans%206&price=64.99&image=clothes/mens/men-slim%20(6).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-slim (6).png" class="card-img-top rounded-0" alt="Men's Slim Jeans 6">
-                            <button class="favorite-btn" data-name="Men's Slim Jeans 6" data-price="64.99" data-image="clothes/mens/men-slim (6).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Slim Jeans 6</h5>
-                            <p class="card-text">$64.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Straight Jeans 1 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Straight%20Jeans&price=59.99&image=clothes/mens/men-straight.png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-straight.png" class="card-img-top rounded-0" alt="Men's Straight Jeans">
-                            <button class="favorite-btn" data-name="Men's Straight Jeans" data-price="59.99" data-image="clothes/mens/men-straight.png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Straight Jeans</h5>
-                            <p class="card-text">$59.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Straight Jeans 2 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Straight%20Jeans%202&price=64.99&image=clothes/mens/men-straight%20(2).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-straight (2).png" class="card-img-top rounded-0" alt="Men's Straight Jeans 2">
-                            <button class="favorite-btn" data-name="Men's Straight Jeans 2" data-price="64.99" data-image="clothes/mens/men-straight (2).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Straight Jeans 2</h5>
-                            <p class="card-text">$64.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Straight Jeans 3 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Straight%20Jeans%203&price=59.99&image=clothes/mens/men-straight%20(3).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-straight (3).png" class="card-img-top rounded-0" alt="Men's Straight Jeans 3">
-                            <button class="favorite-btn" data-name="Men's Straight Jeans 3" data-price="59.99" data-image="clothes/mens/men-straight (3).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Straight Jeans 3</h5>
-                            <p class="card-text">$59.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Baggy Jeans 1 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Baggy%20Jeans&price=64.99&image=clothes/mens/men-baggy.png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-baggy.png" class="card-img-top rounded-0" alt="Men's Baggy Jeans">
-                            <button class="favorite-btn" data-name="Men's Baggy Jeans" data-price="64.99" data-image="clothes/mens/men-baggy.png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Baggy Jeans</h5>
-                            <p class="card-text">$64.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Baggy Jeans 2 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Baggy%20Jeans%202&price=59.99&image=clothes/mens/men-baggy%20(2).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-baggy (2).png" class="card-img-top rounded-0" alt="Men's Baggy Jeans 2">
-                            <button class="favorite-btn" data-name="Men's Baggy Jeans 2" data-price="59.99" data-image="clothes/mens/men-baggy (2).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Baggy Jeans 2</h5>
-                            <p class="card-text">$59.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Baggy Jeans 3 -->
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="card rounded-0">
-                    <a href="product-details.php?name=Men's%20Baggy%20Jeans%203&price=64.99&image=clothes/mens/men-baggy%20(3).png" class="product-link">
-                        <div class="card-img-container">
-                            <img src="clothes/mens/men-baggy (3).png" class="card-img-top rounded-0" alt="Men's Baggy Jeans 3">
-                            <button class="favorite-btn" data-name="Men's Baggy Jeans 3" data-price="64.99" data-image="clothes/mens/men-baggy (3).png">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Men's Baggy Jeans 3</h5>
-                            <p class="card-text">$64.99</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
     <?php include 'footer.php'; ?>
 
-    <style>
+<style>
         .card {
             border: 1px solid black;
             cursor: pointer;
         }
-
         .card-img-container {
             position: relative;
             overflow: hidden;
@@ -258,14 +215,12 @@ include 'header.php';
             justify-content: center;
             background-color: #fff;
         }
-
         .card-img-top {
             width: 100%;
             height: 100%;
             object-fit: contain;
             padding: 10px;
         }
-
         .favorite-btn {
             position: absolute;
             top: 10px;
@@ -282,62 +237,65 @@ include 'header.php';
             transition: all 0.3s ease;
             z-index: 1;
         }
-
         .favorite-btn:hover {
             background: rgba(255, 255, 255, 1);
             transform: scale(1.1);
         }
-
         .favorite-btn i {
             color: #808080;
             font-size: 18px;
             transition: color 0.3s ease;
         }
-
         .favorite-btn.active i {
             color: #ff0000;
         }
-
         .product-link {
             text-decoration: none;
             color: inherit;
         }
-
         .product-link:hover {
             text-decoration: none;
             color: inherit;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .category-title {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .category-title h2 {
-            font-family: 'Prata', serif;
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.category-title {
+    text-align: center;
+    padding: 40px 0;
+}
+.category-title h2 {
+    font-family: 'Prata', serif;
+    font-size: 2.5rem;
+    margin: 0;
+}
+.section-title {
+    text-align: center;
+    padding: 20px 0;
+}
+.section-title h3 {
+    font-family: 'Prata', serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
         @media (max-width: 768px) {
-            .category-title h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    .category-title h2 {
+        font-size: 2rem;
+    }
+    .section-title h3 {
+        font-size: 1.5rem;
+    }
+}
+</style> 
 
-    <script>
+<script>
         // Add to favorites functionality
         document.querySelectorAll('.favorite-btn').forEach(button => {
             button.addEventListener('click', function(e) {
@@ -376,6 +334,6 @@ include 'header.php';
                 button.classList.add('active');
             }
         });
-    </script>
+</script>
 </body>
 </html> 

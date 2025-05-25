@@ -2,6 +2,26 @@
 include 'fonts.php';
 include 'config.php';
 include 'header.php';
+
+// Dynamically get all accessory images
+$earring_images = glob('clothes/womens/women-earring*.png');
+$bracelet_images = array_merge(
+    glob('clothes/womens/women-bracelet*.png'),
+    glob('clothes/womens/unisex-bracelet.png')
+);
+$ring_images = glob('clothes/womens/women-ring*.png');
+$necklace_images = glob('clothes/womens/women-necklace*.png');
+
+function makeProductName($filename) {
+    $name = basename($filename, '.png');
+    // Remove numbers and parentheses
+    $name = preg_replace('/\s*\(\d+\)/', '', $name);
+    $name = preg_replace('/\s*-\d+$/', '', $name);
+    $name = str_replace(['-', '_'], ' ', $name);
+    $name = preg_replace('/\s+/', ' ', $name);
+    $name = ucwords($name);
+    return $name;
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,41 +34,212 @@ include 'header.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="card-styles.css">
     <link rel="stylesheet" href="nav-styles.css">
-    <link rel="stylesheet" href="card-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="category-title">
         <h2>Women's Accessories</h2>
     </div>
 
+    <!-- Earrings Section -->
+    <div class="section-title">
+        <h3>Earrings</h3>
+        <p class="section-price">$29.99</p>
+    </div>
     <div class="container-fluid p-0">
         <div class="row g-0">
-            <!-- Product cards will go here -->
+            <?php foreach ($earring_images as $img): 
+                $productName = makeProductName($img);
+                $price = '29.99';
+            ?>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card rounded-0">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
+                        <div class="card-img-container">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
         </div>
     </div>
-</body>
-</html>
+
+    <!-- Bracelets Section -->
+    <div class="section-title">
+        <h3>Bracelets</h3>
+        <p class="section-price">$39.99</p>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <?php foreach ($bracelet_images as $img): 
+                $productName = makeProductName($img);
+                $price = '39.99';
+            ?>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card rounded-0">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
+                        <div class="card-img-container">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- Rings Section -->
+    <div class="section-title">
+        <h3>Rings</h3>
+        <p class="section-price">$34.99</p>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <?php foreach ($ring_images as $img): 
+                $productName = makeProductName($img);
+                $price = '34.99';
+            ?>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card rounded-0">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
+                        <div class="card-img-container">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- Necklaces Section -->
+    <div class="section-title">
+        <h3>Necklaces</h3>
+        <p class="section-price">$44.99</p>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <?php foreach ($necklace_images as $img): 
+                $productName = makeProductName($img);
+                $price = '44.99';
+            ?>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card rounded-0">
+                    <a href="product-details.php?name=<?=urlencode($productName)?>&price=<?=$price?>&image=<?=$img?>" class="product-link">
+                        <div class="card-img-container">
+                            <img src="<?=$img?>" class="card-img-top rounded-0" alt="<?=$productName?>">
+                            <button class="favorite-btn" data-name="<?=$productName?>" data-price="<?=$price?>" data-image="<?=$img?>">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><?=$productName?></h5>
+                            <p class="card-text">$<?=$price?></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <?php include 'footer.php'; ?>
 
 <style>
-/* Include all your existing styles */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        .card {
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .card-img-container {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        .favorite-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+        .favorite-btn i {
+            color: #808080;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .favorite-btn.active i {
+            color: #ff0000;
+        }
+        .product-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .product-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+        .section-title {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+        .section-title h3 {
+            font-family: 'Prata', serif;
+            font-size: 2rem;
+            margin: 0;
+            color: #333;
+        }
+        .section-price {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 10px 0 0;
+        }
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -59,26 +250,64 @@ include 'header.php';
         transform: translateY(0);
     }
 }
-
-
-
-
-
 .category-title {
     text-align: center;
     padding: 40px 0;
 }
-
 .category-title h2 {
     font-family: 'Prata', serif;
     font-size: 2.5rem;
     margin: 0;
 }
-
-
-    
+        @media (max-width: 768px) {
     .category-title h2 {
         font-size: 2rem;
     }
+    .section-title h3 {
+        font-size: 1.5rem;
+    }
 }
 </style> 
+
+<script>
+        // Add to favorites functionality
+        document.querySelectorAll('.favorite-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const product = {
+                    name: this.dataset.name,
+                    price: this.dataset.price,
+                    image: this.dataset.image
+                };
+                
+                let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+                const exists = favorites.some(item => item.name === product.name);
+                
+                if (!exists) {
+                    favorites.push(product);
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                    this.classList.add('active');
+                } else {
+                    favorites = favorites.filter(item => item.name !== product.name);
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                    this.classList.remove('active');
+                }
+            });
+
+            // Check if item is in favorites on page load
+            const product = {
+                name: button.dataset.name,
+                price: button.dataset.price,
+                image: button.dataset.image
+            };
+            
+            let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const exists = favorites.some(item => item.name === product.name);
+            
+            if (exists) {
+                button.classList.add('active');
+            }
+        });
+</script>
+</body>
+</html> 

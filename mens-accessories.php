@@ -443,7 +443,7 @@ include 'header.php';
 
     <?php include 'footer.php'; ?>
 
-    <style>
+<style>
         .card {
             border: 1px solid black;
             cursor: pointer;
@@ -508,27 +508,27 @@ include 'header.php';
             color: inherit;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .category-title {
-            text-align: center;
-            padding: 40px 0;
-        }
+.category-title {
+    text-align: center;
+    padding: 40px 0;
+}
 
-        .category-title h2 {
-            font-family: 'Prata', serif;
-            font-size: 2.5rem;
-            margin: 0;
-        }
+.category-title h2 {
+    font-family: 'Prata', serif;
+    font-size: 2.5rem;
+    margin: 0;
+}
 
         .section-title {
             text-align: center;
@@ -543,14 +543,14 @@ include 'header.php';
         }
 
         @media (max-width: 768px) {
-            .category-title h2 {
-                font-size: 2rem;
-            }
+    .category-title h2 {
+        font-size: 2rem;
+    }
             .section-title h3 {
                 font-size: 1.5rem;
             }
-        }
-    </style>
+}
+</style> 
 
     <script>
         // Add to favorites functionality
