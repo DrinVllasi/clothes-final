@@ -59,7 +59,7 @@ session_start();
 <body class="text-center">
 <!-- Creating a from which will post some data in loginLogic.php file -->
 <main class="form-signin">
-  <form action="loginLogic.php" method="post">
+  <form action="loginLogic.php" method="post" autocomplete="off">
     
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -75,12 +75,12 @@ session_start();
     ?>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" autocomplete="off">
       <label for="floatingInput">Username</label>
     </div>
 	<br>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" autocomplete="off">
       <label for="floatingPassword">Password</label>
     </div>
 
